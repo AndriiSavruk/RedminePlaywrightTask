@@ -65,7 +65,6 @@ test.describe("Test cases", () => {
     let inValPass: string;
     inValLog = Math.random().toString(5).substring(2);
     inValPass = Math.random().toString(5).substring(2);
-
     // Step 1
     await clickSignIn(page);
     await expect(page).toHaveURL("https://www.redmine.org/login");
