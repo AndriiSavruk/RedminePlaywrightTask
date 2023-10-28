@@ -1,14 +1,15 @@
-import { type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
+
+const avatarBlockLocator = '//*[@id="content"]/h2';
 
 export class UserPage {
+  readonly page: Page;
+  readonly avatarBlock: Locator;
 
-    readonly page: Page;
-    readonly avatarBlock: Locator;
-
-    constructor(page: Page) {
-        this.page = page;
-        this.avatarBlock = page.locator('//*[@id="content"]/h2');
-    }
+  constructor(page: Page) {
+    this.page = page;
+    this.avatarBlock = page.locator(avatarBlockLocator);
+  }
 }
 
 export default UserPage;
