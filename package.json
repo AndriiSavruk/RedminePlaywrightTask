@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run tests": "npx playwright test"
+    "tests": "npx playwright test",
+    "tests ui": "npx playwright test --ui",
+    "tests -chrome": "npx playwright test --project chromium",
+    "tests -firefox": "npx playwright test --project firefox",
+    "tests -webkit": "npx playwright test --project webkit",
+    "tests report": "npx playwright show-report"
   },
   "keywords": [],
   "author": "",

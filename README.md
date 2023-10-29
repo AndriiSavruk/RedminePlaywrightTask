@@ -15,19 +15,19 @@ Debian 11, Debian 12, Ubuntu 20.04 or Ubuntu 22.04.
 HTTP: https://github.com/AndriiSavruk/RedminePlaywrightTask.git   
 Github: ```git clone https://github.com/AndriiSavruk/RedminePlaywrightTask```
 2. Install NodeJS and NPM
-3. Do a ``` npm install ``` in the project root
+3. Run a ``` npm install ``` in the project root
 
 # Steps to lunch:
 
 for running the tests:  
-```npx playwright test```  
+```npm run tests```  
 running in ui model:  
-```npx playwright test --ui```  
+```npm run tests ui```  
 running in different browsers:  
-```npx playwright test --project chromium```  
-```npx playwright test --project firefox```  
-```npx playwright test --project webkit```  
+```npm run tests -chrome```  
+```npm run tests -firefox```  
+```npm run tests -webkit```  
 
 # Steps to creating the report:
 
-In order to display the report after the local execution you may need to use ```npx playwright show-report``` command.
+In order to display the report after the local execution you may need to use ```npm run tests report``` command.
