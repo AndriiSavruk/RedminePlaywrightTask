@@ -11,11 +11,12 @@ Debian 11, Debian 12, Ubuntu 20.04 or Ubuntu 22.04.
 
 # Steps to install:
 
-1. Clone the repo
+1. Open the repo: https://github.com/AndriiSavruk/RedminePlaywrightTask
+2. Clone the repo
 HTTP: https://github.com/AndriiSavruk/RedminePlaywrightTask.git   
 Github: ```git clone https://github.com/AndriiSavruk/RedminePlaywrightTask```
-2. Install NodeJS and NPM
-3. Run a ``` npm install ``` in the project root
+3. Install NodeJS and NPM
+4. Run a ``` npm install ``` in the project root
 
 # Steps to lunch:
 

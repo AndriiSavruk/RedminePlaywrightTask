@@ -27,25 +27,11 @@ test.beforeEach(async ({ page }) => {
   homePage = new HomePage(page);
 });
 
-async function clickSignIn(page: Page) {
-  await homePage.clickSignIn();
-  loginPage = new LoginPage(page);
-}
-
-async function clickMyAccount(page: Page) {
-  await homePage.clickMyAccount();
-  myAccountPage = new MyAccountPage(page);
-}
-
-async function clickUserActive(page: Page) {
-  await homePage.clickUserActive();
-  userPage = new UserPage(page);
-}
-
 test.describe("Test cases", () => {
   test("Test case #1-1 Valid Login", async ({ page }) => {
     // Step 1
-    await clickSignIn(page);
+    await homePage.clickSignIn();
+    loginPage = new LoginPage(page);
     await expect(page).toHaveURL("https://www.redmine.org/login");
     // Step 2
     await loginPage.userNameField.fill(valLog);
@@ -66,7 +52,8 @@ test.describe("Test cases", () => {
     inValLog = Math.random().toString(5).substring(2);
     inValPass = Math.random().toString(5).substring(2);
     // Step 1
-    await clickSignIn(page);
+    await homePage.clickSignIn();
+    loginPage = new LoginPage(page);
     await expect(page).toHaveURL("https://www.redmine.org/login");
     // Step 2
     await loginPage.userNameField.fill(inValLog);
@@ -85,7 +72,8 @@ test.describe("Test cases", () => {
 
   test("Test case #1-3 Sign out", async ({ page }) => {
     // Step 1
-    await clickSignIn(page);
+    await homePage.clickSignIn();
+    loginPage = new LoginPage(page);
     await expect(page).toHaveURL("https://www.redmine.org/login");
     // Step 2
     await loginPage.loginOnThePage(valLog, valPass);
@@ -99,14 +87,16 @@ test.describe("Test cases", () => {
 
   test("Test case #1-4 Check User name in MyAccount page", async ({ page }) => {
     // Step 1
-    await clickSignIn(page);
+    await homePage.clickSignIn();
+    loginPage = new LoginPage(page);
     await expect(page).toHaveURL("https://www.redmine.org/login");
     // Step 2
     await loginPage.loginOnThePage(valLog, valPass);
     await expect(page).toHaveURL(URL);
     await expect(homePage.loggedString).toContainText(valLog);
     // Step 3
-    await clickMyAccount(page);
+    await homePage.clickMyAccount();
+    myAccountPage = new MyAccountPage(page);
     await expect(page).toHaveURL("https://www.redmine.org/my/account");
     await expect(myAccountPage.informationBlock).toBeVisible();
     await expect(myAccountPage.userFirstName).toHaveValue(valName);
@@ -114,14 +104,16 @@ test.describe("Test cases", () => {
 
   test("Test case #1-5 Check User login in the User page", async ({ page }) => {
     // Step 1
-    await clickSignIn(page);
+    await homePage.clickSignIn();
+    loginPage = new LoginPage(page);
     await expect(page).toHaveURL("https://www.redmine.org/login");
     // Step 2
     await loginPage.loginOnThePage(valLog, valPass);
     await expect(page).toHaveURL(URL);
     await expect(homePage.loggedString).toContainText(valLog);
     // Step 3
-    await clickUserActive(page);
+    await homePage.clickUserActive();
+    userPage = new UserPage(page);
     await expect(page).toHaveURL(/.*users/);
     await expect(userPage.avatarBlock).toHaveText(valFullName);
   });

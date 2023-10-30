@@ -34,6 +34,21 @@ export class HomePage {
   async clickUserActive() {
     await this.page.locator(userActiveLinkLocator).click();
   }
+
+  // async function clickSignIn(page: Page) {
+  //   await this.clickSignIn();
+  //   loginPage = new LoginPage(page);
+  // }
+  
+  // async function clickMyAccount(page: Page) {
+  //   await homePage.clickMyAccount();
+  //   myAccountPage = new MyAccountPage(page);
+  // }
+  
+  // async function clickUserActive(page: Page) {
+  //   await homePage.clickUserActive();
+  //   userPage = new UserPage(page);
+  // }
 }
 
 export default HomePage;
