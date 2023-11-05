@@ -18,7 +18,7 @@ Github: ```git clone https://github.com/AndriiSavruk/RedminePlaywrightTask```
 3. Install NodeJS and NPM
 4. Run a ``` npm install ``` in the project root
 
-# Steps to lunch:
+# Steps to launch:
 
 for running the tests:  
 ```npm run tests```  
